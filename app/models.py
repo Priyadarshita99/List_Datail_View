@@ -2,10 +2,13 @@ from django.db import models
 
 # Create your models here.
 
+from django.urls import reverse
 class School(models.Model):
     Sname=models.CharField(max_length=50)
     Sprincipal=models.CharField(max_length=50)
     Slocation=models.CharField(max_length=50)
+    def get_abssolute_url(self):
+        return reverse('detail',kwargs={'pk':self.pk})
 
     def __str__(self):
         return self.Sname

@@ -1,0 +1,29 @@
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+    <title>School Details</title>
+{% endblock %}
+
+{% block body_block %}
+    <center>
+        <h1 style="color: seagreen;">Detail Information of {{schoolobject.Sname}}:-</h1>  <br>
+        
+        <h2>Name of the school is {{schoolobject.Sname}}</h2>
+        <h2>Principal of the school is {{schoolobject.Sprincipal}}</h2>
+        <h2>location of the school is {{schoolobject.Slocation}}</h2>  <br>
+
+        <h1 style="color: rgb(60, 60, 196);">Student Details Are:-</h1>  <br>
+        <table border="2px">
+            <tr>
+                <th style="color: brown;">Student Name</th>
+                <th style="color: brown;">Student Age</th>
+            </tr>
+            {% for st in schoolobject.students.all %}
+                <tr>
+                    <td>{{st.Stname}}</td>
+                    <td>{{st.Sage}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+{% endblock %}
