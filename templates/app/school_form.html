@@ -1,0 +1,29 @@
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+    <title>School Details</title>
+{% endblock %}
+
+{% block body_block %}
+    <center>
+
+    {% if  form.instance.pk %}
+        <h1 style="color: blue;">Update School Form:-</h1> <br>
+    {% else %}
+    <h1 style="color: blue;">Create School Form:-</h1> <br>
+    {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+                {{form.as_p}}
+            
+    {% if form.instance.pk %}            
+            <input type="submit" value="Update School">
+    {% else %}
+        <input type="submit" value="Update School">
+    {% endif %}
+
+        </form>
+    </center>
+{% endblock %}

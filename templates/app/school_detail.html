@@ -24,6 +24,8 @@
                     <td>{{st.Sage}}</td>
                 </tr>
             {% endfor %}
-        </table>
+        </table>  <br>
+
+        <a href="{% url 'SchoolUpdate' pk=schoolobject.pk %}" class="btn btn-success">Update School</a>
     </center>
 {% endblock %}
